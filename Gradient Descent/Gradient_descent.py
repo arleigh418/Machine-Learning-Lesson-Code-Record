@@ -17,6 +17,7 @@ def theda(parser1,parser2,lr,h0_update,h1_update):
 
 # Regression f(x) = theda0 + theda1*x
 def count(parser1,parser2,x,y):
+    result = []
     for i in range(len(x)):
         result.append(parser1+parser2*x[i])
     return result
