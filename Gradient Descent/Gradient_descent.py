@@ -1,9 +1,11 @@
+
+  
 import numpy as np 
 import pandas as pd
 import matplotlib.pyplot as plt
 
 #E(θ0, θ1) =1/2∑(hθ(x^(i)) − y^(i))^2
-def cost_function(x,y,parser1,parser2,lr): #
+def cost_function(x,y,parser1,parser2,lr): 
     h0 = parser1 + parser2*x
     h_update1 = h0-y
     h_update2 = (h0-y)*x
@@ -22,6 +24,9 @@ def count(parser1,parser2,x,y):
         result.append(parser1+parser2*x[i])
     return result
 
+def count_cost(parser1,parser2,x,y):
+    error = (y - (parser1+parser2*x))**2
+    return error
 
 def add(num):
     nsum = 0
@@ -35,12 +40,12 @@ x = data['X'].tolist()
 y = data['y'].tolist()
 lr = 0.01
 
-#for plt
-parser1_plt = []
-parser2_plt = []
+#for cost
+parser_cost = []
 
 #running
 for epoch in range(0,200):
+    cost = 0
     h_update1_list = []
     h_update2_list = []
     for i in range(len(x)):
@@ -50,16 +55,17 @@ for epoch in range(0,200):
             h_update1,h_update2 = cost_function(x[i],y[i],parser1,parser2,lr) #count each with x data
             h_update1_list.append(h_update1)
             h_update2_list.append(h_update2)
+            cost+=count_cost(parser1,parser2,x[i],y[i])
         else:
             parser1 = parser1_update
             parser2 = parser2_update
             h_update1,h_update2 = cost_function(x[i],y[i],parser1,parser2,lr)
             h_update1_list.append(h_update1)
             h_update2_list.append(h_update2)
+            cost+=count_cost(parser1,parser2,x[i],y[i])
 
+    parser_cost.append(cost/len(x))
     parser1_update,parser2_update= theda(parser1,parser2,lr,h_update1_list,h_update2_list) #new update theda0 theda1
-    parser1_plt.append(parser1_update)
-    parser2_plt.append(parser2_update)
     print('第',epoch,'次訓練更新','parser1:',parser1_update,'parser2:',parser2_update)
 
 
@@ -78,10 +84,10 @@ plt.close()
 
 
 fig2 = plt.figure()
-plt.title('Theta Each epoch result')
+plt.title('Cost - Each epoch')
 plt.xlabel('epoch')
-plt.ylabel('Theta')
-plt.plot(ag,parser1_plt,'g-',label = 'Theta0')
-plt.plot(ag,parser2_plt,'r-',label = 'Theta1')
+plt.ylabel('Cost')
+plt.plot(ag,parser_cost,'g-',label = 'Cost')
 plt.legend(loc='best')
-plt.savefig('theta.png')
+plt.savefig('cost.png')
+
