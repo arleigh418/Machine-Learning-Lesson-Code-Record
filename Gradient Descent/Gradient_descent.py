@@ -35,7 +35,7 @@ x = data['X'].tolist()
 y = data['y'].tolist()
 lr = 0.01
 
-#for 
+#for plt
 parser1_plt = []
 parser2_plt = []
 
