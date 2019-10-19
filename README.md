@@ -1,7 +1,7 @@
 # Machine-Learning-Lesson-Code-Record
 
 # Gradient Descent
-Practice gradient descent algorithm with sample Linear regression.
+Practice gradient descent algorithm with simple Linear Regression.
 
 ### Regression Result
 ![image](https://github.com/arleigh418/Machine-Learning-Lesson-Code-Record/blob/master/Gradient%20Descent/Function_target.png)
