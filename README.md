@@ -9,5 +9,5 @@ Practice gradient descent algorithm with simple Linear Regression.
 ### Cost for each epoch
 ![image](https://github.com/arleigh418/Machine-Learning-Lesson-Code-Record/blob/master/Gradient%20Descent/cost.png)
 
-# 2.Feature Engineering & Regression
+# 2.Linear Regression for Concrete Compressive Strength
 Practice Feature Engineering & Linear Regression,using Concrete_Data come from : https://archive.ics.uci.edu/ml/datasets/concrete+compressive+strength
