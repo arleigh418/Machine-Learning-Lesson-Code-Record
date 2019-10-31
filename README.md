@@ -12,7 +12,10 @@ Practice gradient descent algorithm with simple Linear Regression.
 # 2.Linear Regression for Concrete Compressive Strength
 Practice Feature Engineering & Linear Regression,using Concrete_Data come from : https://archive.ics.uci.edu/ml/datasets/concrete+compressive+strength
 
+Please refer description document : https://github.com/arleigh418/Machine-Learning-Lesson-Code-Record/blob/master/Linear%20Regression%20for%20Concrete%20Compressive%20Strength/Linear%20Regression%20Document.pdf
+
+
 ### Correlation Coefficient Heatmap
 ![image](https://github.com/arleigh418/Machine-Learning-Lesson-Code-Record/blob/master/Linear%20Regression%20for%20Concrete%20Compressive%20Strength/heatmap_new.png)
 
-Please refer description document : https://github.com/arleigh418/Machine-Learning-Lesson-Code-Record/blob/master/Linear%20Regression%20for%20Concrete%20Compressive%20Strength/Linear%20Regression%20Document.pdf
+
